@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Audio Player</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='CSS/style.css') }}">
+</head>
+<body>
+    <h1>Audio Player with Shuffle functionality</h1>
+    <audio id="audio-player" controls></audio>
+    <button id="previous">Previous</button>
+    <button id="next">Next</button>
+    <button id="shuffle">Shuffle</button>
+    <div id="current-song"></div>
+    <ul id="song-list">
+        {% for song in songs|sort %}
+        <li data-src="{{ song }}">{{ song }}</li>
+        {% endfor %}
+    </ul>
+    <script src="{{ url_for('static', filename='Java_script/audio-player.js') }}"></script>
+</body>
+</html>
+
